@@ -1,0 +1,96 @@
+<form method="post" action="">
+    {% csrf_token %}
+    <!--{{form.as_p}}-->
+
+    <!-- <h1>Cadastro</h1> 
+       <center><h3>Informações para o cadastro</h3></center>
+    <br/><br/>
+
+    <p> 
+        <label for="nome_cad">Primeiro Nome:</label>
+            {{Cadastro.first_name}}
+    </p>
+
+    <p> 
+        <label for="nome_cad">Sobrenome:</label>
+        {{Cadastro.last_name}}
+    </p>
+
+    <p> 
+        <label for="nome_cad">E-mail:</label>
+        <input name="email" type="email" id="email" required>
+
+    </p>
+
+   
+
+
+    <p> 
+        <label for="nome_cad">CPF:</label>
+
+        <select name="" id="lang">
+            <option value="CPF">CPF</option>
+            <option value="CNPJ">CNPJ</option>
+        </select>
+
+        <input type="text" name="CPF" \
+            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+            title="Digite um CPF no formato: xxx.xxx.xxx-xx">
+    </p>
+
+    <p> 
+        <input name="cnpj" type="text" id="cnpj"
+        pattern="\d{2}\.\d{3}\.\d{3}\ / \d{4}-\d{2}" \
+        title="Digite um CNPJ no formato: xx.xxx.xxx/0001-xx"/>
+    </p>
+
+    <p> 
+        <label for="nome_cad">Endereço</label><br />
+        <label>Cep:
+        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+            onblur="pesquisacep(this.value);" /></label><br />
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="60" /></label><br />
+        <label>Número:
+        <input name="numero" type="text" id="numero" size="60" /></label><br />
+        <label>Complemento:
+        <input name="complemento" type="text" id="complemento" size="60" /></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        <label>Estado:
+        <input name="estado" type="text" id="estado" size="2" /></label><br />
+    
+    </p> 
+
+    </p>
+        <label for="nome_cad">Telefone:</label>
+        <input type="text" name="Phone" onKeyPress="MascaraTelefone(form1.tel);" 
+        maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
+    </p> -->
+
+    <p>
+        <label for="nome_cad">Usuário:</label>
+        <input name="username" value="" />
+    </p>
+
+    <p>
+        <label for="nome_cad" type="password">Senha:</label>
+        <input name="password" value="" />
+    </p>
+
+    <!-- <p> 
+        <label for="nome_cad" type="password">Confirmação da Senha:</label>
+        <input name="cep" type="password" /></label><br />
+    </p>
+    -->
+
+    <p>
+        <input type="submit" value="Enviar Cadastro" />
+
+    </p>
+
+
+
+</form>

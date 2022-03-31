@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sirius</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+
+</head>
+
+<body>
+  <div class="w3-padding-large " id="main">
+    <form method="POST">
+        {% csrf_token %} 
+        <input type="hidden" nmae="next" value="{{next}}">
+        {{form}}
+        <div class="w3-right-align"><a href="" style="color: white;">Forgot password?</a></div>
+        <br>
+        <div class="w3-center">
+        <button type="submit" class="w3-btn w3-round-large  w3-text-white" style="width: 60%; background-color: #D4CE3F;"><b> Cadastrar </b> </button></div>
+    </form>
+
+
+  </div>
+  </body>
+
+
+</html> -->
+
+
+
+{% endblock %}
+
