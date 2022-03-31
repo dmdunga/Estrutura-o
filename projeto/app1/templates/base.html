@@ -35,13 +35,13 @@
     <!-- Avatar image in top left corner -->
 
 
-    <a href="" class="w3-bar-item w3-button w3-padding-large ">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-padding-large ">
       <!-- <img src="{% static 'images/icon.png' %}" style="width:80%"> -->
       <img src="{% static 'images/iconesis.png' %}" style="width:80%">
       <p>Datasheet</p>
     </a>
 
-    <a href="accounts/Login" class="w3-bar-item w3-button w3-padding-large ">
+    <a href="{% url 'singin' %}" class="w3-bar-item w3-button w3-padding-large ">
       <i class="fas fa-sign-out-alt w3-xxlarge"></i>
       <p>Log in</p>
 

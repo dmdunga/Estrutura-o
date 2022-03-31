@@ -12,6 +12,7 @@ from datetime import date
 from datetime import datetime
 from django.utils import timezone
 from django.core import validators
+from django.conf import settings
 
 # python manage.py migrate admin zero
 # python manage.py migrate auth zero
@@ -30,7 +31,7 @@ class UserManager(BaseUserManager):
     def _create_user(self, username, password, is_staff, is_superuser, **extra_fields):
         now = datetime.now()
         if not username:
-            raise ValueError(_('The given username must be set'))
+            raise ValueError(('The given username must be set'))
         # email = self.normalize_email(email)
         user = self.model(username=username, password=password, is_staff=is_staff, is_active=True,
                           is_superuser=is_superuser, last_login=now, date_joined=now, **extra_fields)
@@ -86,3 +87,20 @@ class User(AbstractBaseUser, PermissionsMixin):
         "Does the user have a specific permission?"
         # Simplest possible answer: Yes, always
         return True
+
+class Paciente(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,unique=True)
+    activation_token = models.CharField(max_length=67, unique=True,default=secrets.token_urlsafe(50))
+    is_token_validated = models.BooleanField()
+    is_token_validated = False
+
+    def __str__(self):
+        return self.user.first_name + ' ' + self.user.last_name
+
+class Profissional(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,unique=True)
+    Profissao=models.TextField()
+    numeroDeRegistroProfissional = models.TextField()
+    
+    def __str__(self):
+        return self.user.first_name + ' ' + self.user.last_name

@@ -1,3 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="w3-padding-large " id="main">
+<h1> Faça o Login</h1>
 <form method="post" action="">
     {% csrf_token %}
     <!--{{form.as_p}}-->
@@ -87,10 +95,12 @@
     -->
 
     <p>
-        <input type="submit" value="Enviar Cadastro" />
+        <input type="submit" value="Logar" />
 
     </p>
 
 
 
 </form>
+</div>
+{% endblock %}

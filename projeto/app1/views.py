@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django import forms
 from django.urls import reverse_lazy
-from .models import paciente,pacientesAtivo,pesquisasAtiva,profissional
+from .models import pacientesAtivo,pesquisasAtiva
+from usuarios.models import Profissional, Paciente
 import datetime
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView
@@ -30,7 +31,7 @@ def Footer(request):
 def cadastroPesquisa(request):
     if request.method=='POST':
           form = handleForms(request.POST)
-          form["Profissional"] = profissional.objects.get(id=form['Profissional'])
+          form["Profissional"] = Profissional.objects.get(id=form['Profissional'])
           print(form)
           pesquisasAtiva.objects.create(**form)
     return render (request,"Interface/cadastroPesquisa.html",{"form":CadastroForm()})
